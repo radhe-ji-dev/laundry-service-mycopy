@@ -3,7 +3,7 @@ import Login from "./Login";
 import Navbar from "./Navbar";
 import HomepageLeft from "./HomepageLeft";
 import Referbanner from "./Referbanner";
-
+import Footer from "./Footer";
 function homepage(props) {
   return (
     <>
@@ -17,6 +17,7 @@ function homepage(props) {
       <div className="row " style={{ Color: "red" }}>
         <Referbanner />
       </div>
+      <Footer />
     </>
   );
 }

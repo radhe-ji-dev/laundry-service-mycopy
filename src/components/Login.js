@@ -2,40 +2,40 @@ import React from "react";
 
 function login(props) {
   return (
-    <div className="col-md-6 " style={{ backgroundColor: "#F8F9FF" }}>
+    <div className="col-md-6 mt-3 shadow-sm p-3 mb-1 bg-white rounded">
       <form>
         <label>Sign In</label>
-        <div class="mb-3">
+        <div className="mb-3">
           <label for="exampleInputEmail1" class="form-label">
             Email address
           </label>
           <input
             type="email"
-            class="form-control"
+            className="form-control shadow-sm p-3"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
           />
-          <div id="emailHelp" class="form-text">
+          <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
           </div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">
+          <label for="exampleInputPassword1" className="form-label">
             Password
           </label>
           <input
             type="password"
-            class="form-control"
+            className="form-control shadow-sm p-3"
             id="exampleInputPassword1"
           />
         </div>
-        <div class="mb-3 form-check">
+        <div className="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1">
+          <label className="form-check-label" for="exampleCheck1">
             Check me out
           </label>
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>
