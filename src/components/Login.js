@@ -2,8 +2,8 @@ import React from "react";
 
 function login(props) {
   return (
-    <div className="col-md-6 mt-3 shadow-sm p-3 mb-1 bg-white rounded">
-      <form>
+    <div className="col-md-6 shadow-sm pr-3 mb-1 bg-white rounded">
+      <form className="col-md-10 ">
         <label>Sign In</label>
         <div className="mb-3">
           <label for="exampleInputEmail1" class="form-label">
