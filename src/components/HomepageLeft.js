@@ -12,7 +12,7 @@ function Navbar(props) {
         </p>
       </div>
       <div className="row">
-        <button className="btn"></button>
+        <button className="btn">Register</button>
       </div>
     </div>
   );

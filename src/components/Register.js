@@ -1,43 +1,131 @@
+import Footer from "./Footer";
+import Navbar from "./Navbar";
+import Referbanner from "./Referbanner";
+import Dropdown from "./dropdown";
+
 function register() {
   return (
     <>
-      <form>
-        <div className="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input
-            type="email"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-          />
-          <small id="emailHelp" className="form-text text-muted">
-            We'll never share your email with anyone else.
-          </small>
+      <div className="row">
+        <Navbar />
+      </div>
+      <div className="row">
+        <div className="col-md-3  mt-3 " style={{ color: "#5861AE" }}>
+          <div className="row ">
+            <h1 className="offset-md-3 col-md-6 " style={{ fontSize: "48" }}>
+              Laundry Services
+            </h1>
+            <p className="offset-md-3 col-md-6">
+              Laundry Serveces at your doorstep
+            </p>
+            <small className="offset-md-3 col-md-7">
+              <p>Already have an Acoount</p>
+            </small>
+            <button className="btn btn-secondary offset-md-3 col-md-6">
+              Login
+            </button>
+          </div>
         </div>
-        <div className="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            id="exampleInputPassword1"
-            placeholder="Password"
-          />
+        {/*here i am dividing varicle */}
+        <div
+          className="col-md-9 "
+          style={{ backgroundColor: "var(--lightblue)" }}
+        >
+          <div className="row">
+            <div className="col-md-5">
+              <div className="form-group col-md-12">
+                <label for="exampleInputEmail1">Name</label>
+                <input
+                  type="text"
+                  className="form-control "
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Name"
+                />
+              </div>
+              <div className="form-group col-md-12">
+                <label for="exampleInputEmail1">Phone</label>
+                <input
+                  type="text"
+                  className="form-control "
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Phone"
+                />
+              </div>
+              <div className="form-group col-md-12">
+                <p>District</p>
+                <Dropdown />
+              </div>
+              <div className="form-group col-md-12">
+                <label for="exampleInputEmail1">Pincode</label>
+                <input
+                  type="text"
+                  className="form-control "
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Pincode"
+                />
+              </div>
+            </div>
+            <div className="col-md-5">
+              {" "}
+              {/*this is right part*/}
+              <div className="form-group col-md-12">
+                <label for="exampleInputEmail1">Email</label>
+                <input
+                  type="text"
+                  className="form-control "
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Email"
+                />
+              </div>
+              <div className="form-group col-md-12">
+                <p>State</p>
+                <Dropdown />
+              </div>
+              <div className="form-group col-md-12">
+                <label for="exampleInputEmail1">Address</label>
+                <input
+                  type="text"
+                  className="form-control "
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Address"
+                />
+              </div>
+            </div>
+            <div>
+              <p>
+                <span>
+                  <div class="form-check offset-md-5">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Accept Terms and Conditions
+                    </label>
+                  </div>
+                </span>
+              </p>
+            </div>
+            <div className="offset-md-5">
+              <button className="btn btn-primary">Register</button>
+            </div>
+          </div>
         </div>
-        <div className="form-group form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-          <label className="form-check-label" for="exampleCheck1">
-            Check me out
-          </label>
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
+      </div>
+
+      <div className="row">
+        <Referbanner />
+      </div>
+      <div className="row">
+        <Footer />
+      </div>
     </>
   );
 }
