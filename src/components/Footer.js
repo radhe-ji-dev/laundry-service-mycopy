@@ -10,11 +10,11 @@ function Footer(props) {
         </div>
         <div className="col-md-1">
           <h5>Home</h5>
-          <a href="#" style={{ color: "var(--blue)" }}>
+          <a href="/" style={{ color: "var(--blue)" }}>
             SignIn
           </a>
           <br></br>
-          <a href="#" style={{ color: "var(--blue)" }}>
+          <a href="/" style={{ color: "var(--blue)" }}>
             Register
           </a>
         </div>
@@ -23,11 +23,11 @@ function Footer(props) {
         </div>
         <div className="col-md-1">
           <h5>Career</h5>
-          <a href="#" style={{ color: "var(--blue)" }}>
+          <a href="/" style={{ color: "var(--blue)" }}>
             Blogs
           </a>
           <br></br>
-          <a href="#" style={{ color: "var(--blue)" }}>
+          <a href="/" style={{ color: "var(--blue)" }}>
             Create
           </a>
         </div>
@@ -37,18 +37,17 @@ function Footer(props) {
         </div>
         <div className="col-md-3">
           <h5>Social Media</h5>
-          <a
-            href="#"
+          <a href="/"
             style={{ color: "var(--blue)" }}
             className="fa fa-facebook m-1"
           ></a>
           <a
-            href="#"
+            href="/"
             style={{ color: "var(--blue)" }}
             className="fa fa-twitter m-1"
           ></a>
           <a
-            href="#"
+            href="/"
             style={{ color: "var(--blue)" }}
             className="fa fa-linkedin m-1"
           ></a>
