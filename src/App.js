@@ -6,7 +6,7 @@ import Register from "./components/Register";
 function App() {
   return (
     <>
-      {/*<Home */}
+      {/*<Home />*/}
       <Register />
     </>
   );

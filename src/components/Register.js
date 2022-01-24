@@ -2,7 +2,7 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import Referbanner from "./Referbanner";
 import Dropdown from "./dropdown";
-
+import Bottomribon from "./Bottumribon";
 function register() {
   return (
     <>
@@ -125,6 +125,9 @@ function register() {
       </div>
       <div className="row">
         <Footer />
+      </div>
+      <div>
+        <Bottomribon />
       </div>
     </>
   );
