@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Referbanner from "./Referbanner";
 import Dropdown from "./dropdown";
 import Bottomribon from "./Bottumribon";
+
 function register() {
   return (
     <>
@@ -83,7 +84,7 @@ function register() {
               </div>
               <div className="form-group col-md-12">
                 <p>State</p>
-                <Dropdown />
+                {/*<Dropdown />*/}
               </div>
               <div className="form-group col-md-12">
                 <label for="exampleInputEmail1">Address</label>
