@@ -29,7 +29,7 @@ function register() {
         </div>
         {/*here i am dividing varicle */}
         <div
-          className="col-md-9 "
+          className="col-md-9"
           style={{ backgroundColor: "var(--lightblue)" }}
         >
           <div className="row">
@@ -55,7 +55,7 @@ function register() {
                 />
               </div>
               <div className="form-group col-md-12">
-                <p>District</p>
+                <p className="mb-0">District</p>
                 <Dropdown />
               </div>
               <div className="form-group col-md-12">
@@ -73,7 +73,7 @@ function register() {
               {" "}
               {/*this is right part*/}
               <div className="form-group col-md-12">
-                <label for="exampleInputEmail1">Email</label>
+                <label for="exampleInputEmail1">Last Name</label>
                 <input
                   type="text"
                   className="form-control "
@@ -83,11 +83,31 @@ function register() {
                 />
               </div>
               <div className="form-group col-md-12">
-                <p>State</p>
-                {/*<Dropdown />*/}
+                <p className="mb-0">State</p>
+                <Dropdown />
               </div>
               <div className="form-group col-md-12">
                 <label for="exampleInputEmail1">Address</label>
+                <input
+                  type="text"
+                  className="form-control "
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Address"
+                />
+              </div>
+              <div className="form-group col-md-12">
+                <label for="exampleInputEmail1">Password</label>
+                <input
+                  type="text"
+                  className="form-control "
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Address"
+                />
+              </div>
+              <div className="form-group col-md-12">
+                <label for="exampleInputEmail1">Confirm Password</label>
                 <input
                   type="text"
                   className="form-control "
