@@ -1,16 +1,51 @@
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import Referbanner from "./Referbanner";
-import Dropdown from "./dropdown";
+import { useState } from "react";
 import Bottomribon from "./Bottumribon";
+import axios from "axios";
+import { Link } from "react-router-dom";
+function Register(props) {
+  const [user, setUser] = useState({
+    firstname: "",
+    secondname: "",
+    email: "",
+    mobile: "",
+    password: "",
+    confirmpassword: "",
+    state: "",
+    district: "",
+    address: "",
+    pincode: "",
+  });
+  const changeHandler = (event) => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
 
-function register() {
+  const submitHandler = (event) => {
+    event.preventDefault();
+    axios.post("http://localhost:4500/register", user).then((res) => {
+      alert(res.user);
+      setUser({
+        firstname: "",
+        secondname: "",
+        email: "",
+        mobile: "",
+        password: "",
+        confirmpassword: "",
+        state: "",
+        district: "",
+        address: "",
+        pincode: "",
+      });
+    });
+  };
   return (
     <>
-      <div className="row">
+      <div className="row mb-0">
         <Navbar />
       </div>
-      <div className="row">
+      <div className="row mt-0 mb-0">
         <div className="col-md-3  mt-3 " style={{ color: "#5861AE" }}>
           <div className="row ">
             <h1 className="offset-md-3 col-md-6 " style={{ fontSize: "48" }}>
@@ -29,119 +64,144 @@ function register() {
         </div>
         {/*here i am dividing varicle */}
         <div
-          className="col-md-9"
+          className="col-md-9 mb-0"
           style={{ backgroundColor: "var(--lightblue)" }}
         >
-          <div className="row">
-            <div className="col-md-5">
-              <div className="form-group col-md-12">
-                <label for="exampleInputEmail1">Name</label>
+          <form>
+            <div class="row align-items-center g-3">
+              <div class="col-md-5">
+                <label class="visually-hidden" for="inputEmail">
+                  Fisrt Name
+                </label>
                 <input
-                  type="text"
-                  className="form-control "
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Name"
+                  type="First Name"
+                  class="form-control"
+                  id="First Name"
+                  placeholder="First Name"
                 />
               </div>
-              <div className="form-group col-md-12">
-                <label for="exampleInputEmail1">Phone</label>
+              <div class="col-md-5">
+                <label class="visually-hidden" for="inputPassword">
+                  Last Name
+                </label>
                 <input
                   type="text"
-                  className="form-control "
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Phone"
-                />
-              </div>
-              <div className="form-group col-md-12">
-                <p className="mb-0">District</p>
-                <Dropdown />
-              </div>
-              <div className="form-group col-md-12">
-                <label for="exampleInputEmail1">Pincode</label>
-                <input
-                  type="text"
-                  className="form-control "
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Pincode"
+                  class="form-control"
+                  id="inputPassword"
+                  placeholder="Last Name"
                 />
               </div>
             </div>
-            <div className="col-md-5">
-              {" "}
-              {/*this is right part*/}
-              <div className="form-group col-md-12">
-                <label for="exampleInputEmail1">Last Name</label>
+            <div class="row align-items-center g-3">
+              <div class="col-md-5">
+                <label class="visually-hidden" for="inputEmail">
+                  Email
+                </label>
                 <input
-                  type="text"
-                  className="form-control "
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
+                  type="First Name"
+                  class="form-control"
+                  id="First Name"
                   placeholder="Email"
                 />
               </div>
-              <div className="form-group col-md-12">
-                <p className="mb-0">State</p>
-                <Dropdown />
-              </div>
-              <div className="form-group col-md-12">
-                <label for="exampleInputEmail1">Address</label>
+              <div class="col-md-5">
+                <label class="visually-hidden" for="inputPassword">
+                  Phone
+                </label>
                 <input
                   type="text"
-                  className="form-control "
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Address"
-                />
-              </div>
-              <div className="form-group col-md-12">
-                <label for="exampleInputEmail1">Password</label>
-                <input
-                  type="text"
-                  className="form-control "
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Address"
-                />
-              </div>
-              <div className="form-group col-md-12">
-                <label for="exampleInputEmail1">Confirm Password</label>
-                <input
-                  type="text"
-                  className="form-control "
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Address"
+                  class="form-control"
+                  id="inputPassword"
+                  placeholder="Phone"
                 />
               </div>
             </div>
-            <div>
-              <p>
-                <span>
-                  <div class="form-check offset-md-5">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      value=""
-                      id="flexCheckDefault"
-                    />
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Accept Terms and Conditions
-                    </label>
-                  </div>
-                </span>
-              </p>
+            <div class="row align-items-center g-3">
+              <div class="col-md-5">
+                <label class="visually-hidden" for="inputEmail">
+                  District
+                </label>
+                <input
+                  type="First Name"
+                  class="form-control"
+                  id="First Name"
+                  placeholder="District"
+                />
+              </div>
+              <div class="col-md-5">
+                <label class="visually-hidden" for="inputPassword">
+                  State
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputPassword"
+                  placeholder="State"
+                />
+              </div>
             </div>
-            <div className="offset-md-5">
-              <button className="btn btn-primary">Register</button>
+            <div class="row align-items-center g-3">
+              <div class="col-md-5">
+                <label class="visually-hidden" for="inputEmail">
+                  Address
+                </label>
+                <input
+                  type="First Name"
+                  class="form-control"
+                  id="First Name"
+                  placeholder="Address"
+                />
+              </div>
+              <div class="col-md-5">
+                <label class="visually-hidden" for="inputPassword">
+                  Password
+                </label>
+                <input
+                  type="Password"
+                  class="form-control"
+                  id="inputPassword"
+                  placeholder="Password"
+                />
+              </div>
             </div>
+            <div class="row align-items-center g-3">
+              <div class="offset-3 col-md-5">
+                <label class="visually-hidden" for="inputEmail">
+                  ConfirmPassword
+                </label>
+                <input
+                  type="First Name"
+                  class="form-control"
+                  id="First Name"
+                  placeholder="Confirm Password"
+                />
+              </div>
+            </div>
+          </form>
+          <div>
+            <p>
+              <span>
+                <div class="form-check offset-md-5 ">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Accept Terms and Conditions
+                  </label>
+                </div>
+              </span>
+            </p>
+          </div>
+          <div className="offset-md-5">
+            <button className="btn btn-primary">Register</button>
           </div>
         </div>
       </div>
 
-      <div className="row">
+      <div className="row mt-0 ">
         <Referbanner />
       </div>
       <div className="row">
@@ -154,4 +214,4 @@ function register() {
   );
 }
 
-export default register;
+export default Register;
