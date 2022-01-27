@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 import "./App.css";
-import Home from "./components/Homepage";
 import Register from "./components/Register";
-import Dropdown from "./components/dropdown";
-import Orderpage from "./components/Orderpage";
+import HomePage from "./components/Homepage";
+import Myprofile from "./components/myprofile";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+export const store = createContext();
+
 function App() {
+  const [token, setToken] = useState(null);
   return (
     <>
       {/*<Home />*/}
-      <Register />
+      <store.Provider value={[token, setToken]}>
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<Register />} />
+            <Route exact path="/register" element={<HomePage />} />
+            <Route exact path="/myprofile" element={<Myprofile />} />
+          </Routes>
+        </BrowserRouter>
+      </store.Provider>
+
       {/*<Dropdown />*/}
       {/*<Orderpage />*/}
     </>

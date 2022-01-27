@@ -1,6 +1,28 @@
-import React from "react";
+import React, { useState, useContext, createContext } from "react";
+import axios from "axios";
+import { store } from "../App";
+import { Navigate } from "react-router-dom";
 
-function login(props) {
+function Login(props) {
+  const [token, setToken] = useContext(store);
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+  const changeHandler = (event) => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
+  const submitHandler = (event) => {
+    event.preventDefault();
+    axios
+      .post("http://localhost:4500/login", user)
+      .then((res) => setToken(res.data.token));
+  };
+  // console.log(token)
+  if (token) {
+    // console.log(user.firstname)
+    return <Navigate to="./myprofile.js" />;
+  }
   return (
     <div className="col-md-6 shadow-sm pr-3 mb-1 bg-white rounded">
       <form className="col-md-10 ">
@@ -43,4 +65,4 @@ function login(props) {
   );
 }
 
-export default login;
+export default Login;

@@ -31,12 +31,12 @@ function Register(props) {
         secondname: "",
         email: "",
         mobile: "",
-        password: "",
-        confirmpassword: "",
         state: "",
         district: "",
         address: "",
         pincode: "",
+        password: "",
+        confirmpassword: "",
       });
     });
   };
@@ -67,7 +67,7 @@ function Register(props) {
           className="col-md-9 mb-0"
           style={{ backgroundColor: "var(--lightblue)" }}
         >
-          <form>
+          <form onSubmit={submitHandler}>
             <div class="row align-items-center g-3">
               <div class="col-md-5">
                 <label class="visually-hidden" for="inputEmail">
@@ -78,6 +78,7 @@ function Register(props) {
                   class="form-control"
                   id="First Name"
                   placeholder="First Name"
+                  onChange={changeHandler}
                 />
               </div>
               <div class="col-md-5">
@@ -89,6 +90,7 @@ function Register(props) {
                   class="form-control"
                   id="inputPassword"
                   placeholder="Last Name"
+                  onChange={changeHandler}
                 />
               </div>
             </div>
@@ -102,6 +104,7 @@ function Register(props) {
                   class="form-control"
                   id="First Name"
                   placeholder="Email"
+                  onChange={changeHandler}
                 />
               </div>
               <div class="col-md-5">
@@ -113,30 +116,33 @@ function Register(props) {
                   class="form-control"
                   id="inputPassword"
                   placeholder="Phone"
+                  onChange={changeHandler}
                 />
               </div>
             </div>
             <div class="row align-items-center g-3">
               <div class="col-md-5">
                 <label class="visually-hidden" for="inputEmail">
-                  District
+                  State
                 </label>
                 <input
                   type="First Name"
                   class="form-control"
                   id="First Name"
-                  placeholder="District"
+                  placeholder="State"
+                  onChange={changeHandler}
                 />
               </div>
               <div class="col-md-5">
                 <label class="visually-hidden" for="inputPassword">
-                  State
+                  Distict
                 </label>
                 <input
                   type="text"
                   class="form-control"
                   id="inputPassword"
-                  placeholder="State"
+                  placeholder="District"
+                  onChange={changeHandler}
                 />
               </div>
             </div>
@@ -150,54 +156,73 @@ function Register(props) {
                   class="form-control"
                   id="First Name"
                   placeholder="Address"
+                  onChange={changeHandler}
                 />
               </div>
               <div class="col-md-5">
                 <label class="visually-hidden" for="inputPassword">
-                  Password
+                  Pincode
                 </label>
                 <input
                   type="Password"
                   class="form-control"
                   id="inputPassword"
-                  placeholder="Password"
+                  placeholder="Pincode"
+                  onChange={changeHandler}
                 />
               </div>
             </div>
             <div class="row align-items-center g-3">
-              <div class="offset-3 col-md-5">
+              <div class="col-md-5">
                 <label class="visually-hidden" for="inputEmail">
-                  ConfirmPassword
+                  Password
+                </label>
+                <input
+                  type="First Name"
+                  class="form-control"
+                  id="First Name"
+                  placeholder="Password"
+                  onChange={changeHandler}
+                />
+              </div>
+
+              <div class="col-md-5">
+                <label class="visually-hidden" for="inputEmail">
+                  Password
                 </label>
                 <input
                   type="First Name"
                   class="form-control"
                   id="First Name"
                   placeholder="Confirm Password"
+                  onChange={changeHandler}
                 />
               </div>
             </div>
+
+            <div>
+              <p>
+                <span>
+                  <div class="form-check offset-md-5 ">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Accept Terms and Conditions
+                    </label>
+                  </div>
+                </span>
+              </p>
+            </div>
+            <div className="offset-md-5">
+              <button type="submit" className="btn btn-primary">
+                Register
+              </button>
+            </div>
           </form>
-          <div>
-            <p>
-              <span>
-                <div class="form-check offset-md-5 ">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault">
-                    Accept Terms and Conditions
-                  </label>
-                </div>
-              </span>
-            </p>
-          </div>
-          <div className="offset-md-5">
-            <button className="btn btn-primary">Register</button>
-          </div>
         </div>
       </div>
 
